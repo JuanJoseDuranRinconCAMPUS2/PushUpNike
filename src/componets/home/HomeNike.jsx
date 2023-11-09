@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import NavBarH from './NavBarH';
+import Cards from './Cards';
+
 export default function HomeNike() {
 
      useEffect(() => {
@@ -10,7 +13,8 @@ export default function HomeNike() {
   
     return (
         <>
-          <h1>HOLA</h1>
+          <NavBarH/>
+          <Cards/>
         </>
     )
 }

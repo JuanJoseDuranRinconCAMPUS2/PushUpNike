@@ -9,12 +9,12 @@ const version = routesVersioning();
 
 especialApp.post("/User", version({
     "1.0.1": (req, res, next) => {
-        limitPColecciones(1, `User`)(req, res, (err) => {
+        limitPColecciones(2000, `User`)(req, res, (err) => {
             getUsersInfo(req, res);
         });
     },
     "1.1.1": (req, res, next) => {
-        limitPColecciones(1, `User`)(req, res, (err) => {
+        limitPColecciones(2000, `User`)(req, res, (err) => {
             proxyValidationTokens(req, res, (err) => {
                 getUsersInfo(req, res);
             });
@@ -24,12 +24,12 @@ especialApp.post("/User", version({
 
 especialApp.post("/User/:id", version({
     "1.0.1": (req, res, next) => {
-        limitPColecciones(1, `User`)(req, res, (err) => {
+        limitPColecciones(2000, `User`)(req, res, (err) => {
             getUsersInfoID(req, res, `${req.params.id}`);
         });
     },
     "1.1.1": (req, res, next) => {
-        limitPColecciones(1, `User`)(req, res, (err) => {
+        limitPColecciones(2000, `User`)(req, res, (err) => {
             proxyValidationTokens(req, res, (err) => {
                 getUsersInfoID(req, res, `${req.params.id}`);
             });
@@ -39,27 +39,20 @@ especialApp.post("/User/:id", version({
 
 especialApp.post("/Producto", version({
     "1.0.1": (req, res, next) => {
-        limitPColecciones(1, `Producto`)(req, res, (err) => {
+        limitPColecciones(2000, `Producto`)(req, res, (err) => {
             getproductosInfo(req, res,);
-        });
-    },
-    "1.1.1": (req, res, next) => {
-        limitPColecciones(1, `Producto`)(req, res, (err) => {
-            proxyValidationTokens(req, res, (err) => {
-                getproductosInfo(req, res,);
-            });
         });
     }
 }));
 
 especialApp.post("/Producto/:data", version({
     "1.0.1": (req, res, next) => {
-        limitPColecciones(1, `Producto`)(req, res, (err) => {
+        limitPColecciones(2000, `Producto`)(req, res, (err) => {
             getproductosCaracteristica(req, res,);
         });
     },
     "1.1.1": (req, res, next) => {
-        limitPColecciones(1, `Producto`)(req, res, (err) => {
+        limitPColecciones(2000, `Producto`)(req, res, (err) => {
             proxyValidationTokens(req, res, (err) => {
                 getproductosCaracteristica(req, res, `${req.params.data}`);
             });
