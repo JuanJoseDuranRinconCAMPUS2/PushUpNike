@@ -47,3 +47,10 @@ VALUES
 ('Tarjeta de credito'),
 ('Tarjeta de debito'),
 ('Cupon');
+
+INSERT INTO `marca_P` (nombre)
+VALUES
+('Nike Sportswear'),
+('Jordan'),
+('NikeLab'),
+('ACG');
