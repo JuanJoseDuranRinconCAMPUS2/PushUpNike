@@ -3,6 +3,7 @@ import { loadEnv } from "vite";
 import crudsApp from "./routes/Cruds.js";
 import appIngresorUsuarios from "./routes/login.js";
 import appCreateUser from "./routes/createUsers.js";
+import especialApp from "./routes/especialRoutes.js";
 
 import cors from "cors";
 
@@ -26,6 +27,10 @@ nikeApi.use("/Login", appIngresorUsuarios);
 
 // Create user
 nikeApi.use("/SignUp", appCreateUser);
+
+// Create user
+nikeApi.use("/Especial", especialApp);
+
 const config = { "hostname": `${env.VITE_HOSTNAME}` , "port": `${env.VITE_PORT_BACKEND}`};
 
 nikeApi.listen(config, ()=>{console.log(`http://${config.hostname}:${config.port}`);})
