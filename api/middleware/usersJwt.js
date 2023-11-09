@@ -4,7 +4,7 @@ import con from "../db/connect.js";
 const validatorUsers = async(req, res) =>{
     return new Promise((resolve, reject) => {
         con.query(
-            /*SQL*/ `SELECT id FROM usuario WHERE nombre = "${req.body.nombre}" AND contraseña = ${req.body.contraseña};`,
+            /*SQL*/ `SELECT id FROM usuario WHERE nombre = "${req.body.nombre}" AND contraseña = "${req.body.contraseña}";`,
             (err, data, fill) => {
                 if (err) {
                     return res.status(500).send({
