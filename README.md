@@ -128,13 +128,302 @@ Antes de ejecutar el código, asegúrate:
    - Aplicación web: [http://127.19.8.7:5198](http://127.19.8.7:5198/)
    - API del servidor: [http://127.19.8.7:5199](http://127.19.8.7:5199/)
 
+
+## 🦊㊙️LOGIN Y CREATE USERS㊙️🦊
+
+## 🐰SignIn
+
+**`GET /`**: Este endpoint se encarga de generar la token de usuario
+
+tiene disponible las versiones:
+
+-  1.0.0 
+
+🚨**Aclaraciones y Validaciones**🚨
+
+- Este endpoint acepta la siguiente data:
+```html
+{
+  "nombre" : "manuel",
+  "contraseña" : "34554"
+}
+```
+
+🔗**Ruta Especifica🔗**
+
+```html
+http://127.19.8.7:5199/Login
+```
+**🧧Metodo HTTP🧧**
+
+```html
+POST
+```
+
+🎫**Respuesta**🎫
+Si la solicitud es exitosa, recibirás una respuesta positiva
+
+  <details>
+    <summary> <h3> Data de Salida </h3></summary> 
+   	{
+  "status": 201,
+  "message": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoibWFudWVsIiwiY29ycmVvIjoic2phZGFkYXNAZ21haWwuY29tIiwicm9sIjoidXN1YXJpbyIsImlhdCI6MTY5OTU0ODg0MSwiZXhwIjoxNjk5NTUyNDQxfQ.i8IgQMYqPccEbl74zV9f-NFUi0GX9PpYsO33IiadQc4",
+  "instructions": "En el header de la peticion pon el header 'Authorization' y luego pon esta llave como valor, ¡esta llave tiene duracion de una hora!"
+}
+</details>
+
+------
+
+## 🐰SignUp
+
+**`GET /`**: Este endpoint se encarga de crear usuarios
+
+tiene disponible las versiones:
+
+-  1.0.0 
+
+🚨**Aclaraciones y Validaciones**🚨
+
+- Este endpoint acepta la siguiente data:
+```html
+{
+  "nombre" : "manuel",
+  "documento" : 213234,
+  "correo" : "sjadadas@gmail.com",
+  "telefono" : 123123213,
+  "direccion" : "carrera 122 34234",
+  "codigo_Postal" : "CP-454",
+  "contraseña" : "34554",
+  "rolFK" : 1,
+  "tipoDocFK" : 1,
+  "generoFK" : 1
+}
+```
+
+🔗**Ruta Especifica🔗**
+
+```html
+http://127.19.8.7:5199/SignUp
+```
+**🧧Metodo HTTP🧧**
+
+```html
+POST
+```
+
+🎫**Respuesta**🎫
+Si la solicitud es exitosa, recibirás una respuesta positiva
+
+  <details>
+    <summary> <h3> Data de Salida </h3></summary> 
+   {
+  "staus": 200,
+  "message": "La data se ha enviado exitosamente a la tabla usuario"
+}
+</details>
+
+------
+
+
+## 🦊㊙️Cruds㊙️🦊
+
+# 🎫/**Endpoints**🎫
+
+**Todos los endpoints manejan el nombre de la coleccion y sus respectivos metodos. asi que vamos a simplificar todo en un sola instruccion**
+
+### **colecciones disponibles para los endpoints**
+
+```
+
+| categoria_P       |
+| genero            |
+| marca_P           |
+| metodo_Pago       |
+| producto          |
+| rol               |
+| tipo_Documento    |
+| tipo_P            |
+| transaccion       |
+| usuario  
+
+```
+
+------
+
+## 🐰Metodo GET
+
+**`GET /`**: Este endpoint se encarga de llamar la data de la coleccion en cuestion.
+
+tiene disponible las versiones:
+
+-  1.0.0 
+
+🚨**Aclaraciones y Validaciones**🚨
+
+- Este endpoint no acepta data de entrada
+
+🔗**Ruta Especifica🔗**
+
+```html
+http://127.19.8.7:5199/<nombreColeccion>/
+```
+**🧧Metodo HTTP🧧**
+
+```html
+GET
+```
+
+🎫**Respuesta**🎫
+Si la solicitud es exitosa, recibirás una respuesta positiva
+
+  <details>
+    <summary> <h3> Data de Salida </h3></summary> 
+   	Este endpoint te devolvera una lista ordenada de datos que esten en la base de datos de la coleccion selecionada
+</details>
+
+la respuesta puede variar segun la version de la api
+------
+
+## 🚨Metodo Post
+
+**`POST /`**:  Este endpoint se encarga de insertar una data a una coleccion en cuestion.
+
+🚨**Aclaraciones y Validaciones**🚨
+
+  <details>
+    <summary> <h3> Importante </h3></summary>
+   <strong>Usa el archivo Postman para verificar la data de entrada de cada uno de los endpoints</strong>
+</details>
+
+
+tiene disponible las versiones:
+
+-  1.0.0 (metodo post)
+
+**Aclaraciones y Validaciones**
+
+- Necesitas una token generada para usar ese endpoint en la version 1.1.0
+
+**Ruta Especifica**
+
+```html
+http://127.19.8.7:5199/<nombreColeccion>/
+```
+**🧧Metodo HTTP🧧**
+
+```html
+POST
+```
+🎫**Respuesta**🎫
+Si la solicitud es exitosa, recibirás una respuesta positiva
+
+<details>
+    <summary> <h3> Data de Salida </h3></summary> 
+  	{<br>
+    	status: 200, <br>
+    	message: "Data enviada Correctamente"<br>
+    }
+   </details>
+la respuesta puede variar segun la version de la api
+------
+
+## 🛃Metodo Put
+
+**`PUT /`**:Este endpoint se encarga de actualizar la data a una coleccion en cuestion.
+
+🚨**Aclaraciones y Validaciones**🚨
+
+  <details>
+    <summary> <h3> Importante </h3></summary>
+   <strong>Usa el archivo thunder para verificar la data de entrada de cada uno de los endpoints</strong>
+</details>
+
+tiene disponible las versiones:
+
+-  1.0.3 (metodo put)
+- 
+
+
+**Ruta Especifica**
+
+```html
+http://127.19.8.7:5199/<nombreColeccion>?id=<id>
+    
+    Reemplaza <id> por el id de la data que quieras actualizar
+```
+**🧧Metodo HTTP🧧**
+
+```html
+PUT 
+```
+🎫**Respuesta**🎫
+Si la solicitud es exitosa, recibirás una respuesta positiva
+
+  
+
+<details>
+    <summary> <h3> Data de Salida </h3></summary> 
+  	{<br>
+    	status: 200, <br>
+    	message: "Documento actualizado correctamente"<br>
+    }
+   </details>
+   la respuesta puede variar segun la version de la api
+------
+
+## 💢Metodo Delete
+
+**`DELETE /`**: Este endpoint se encarga de borrar un documento en una colección en cuestion.
+
+🚨**Aclaraciones y Validaciones**🚨
+
+  <details>
+    <summary> <h3> Tipo De data </h3></summary>
+    <strong>id:</strong> Id del alquiler a borrar (string or number)
+</details>
+
+tiene disponible las versiones:
+
+-  1.0.4 (metodo delete)
+
+**Ruta Especifica**
+
+```html
+http://127.19.8.7:5199/nombreColeccion>/
+```
+**🧧Metodo HTTP🧧**
+
+```html
+DELETE 
+```
+(recuerda solo debes poner el nombre de la coleccion que quieras manipular, si tienes dudas puedes apoyarte en el archivo thunder)
+🎫**Respuesta**🎫
+Si la solicitud es exitosa, recibirás una respuesta positiva
+
+   <details>
+    <summary> <h3> Data de entrada </h3></summary> 
+  	{<br>
+        "id": "10"<br>
+}
+ </details>
+
+<details>
+    <summary> <h3> Data de Salida </h3></summary> 
+  	{<br>
+    	status: 200, <br>
+    	message: "Documento ha sido eliminado correctamente"<br>
+    }
+   </details>
+la respuesta puede variar segun la version de la api
+------
+
 ------
 
 ## **🐰🌌Thunder🌌🐰**
 
 Para acceder a las consultas hechas en el proyecto utiliza el archivo thunde
 
-- 
+- [Thunder Aqui](https://github.com/JuanJoseDuranRinconCAMPUS2/PushUpNike/blob/main/thunder/thunder-collection_NikeAPI.json)
 
 ------
 
