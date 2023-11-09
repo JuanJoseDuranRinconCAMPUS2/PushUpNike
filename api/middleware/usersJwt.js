@@ -18,7 +18,7 @@ const validatorUsers = async(req, res) =>{
                         message: 'Error encontrado, credenciales no validas revise su usuario y contraseña'
                     });
                 } else {
-                    const idUser = data.id 
+                    const idUser = data[0].id
                     resolve(idUser);
                 }
             }
@@ -33,7 +33,27 @@ const proxyUsers = Router();
 proxyUsers.use(async(req, res, next)=>{
     try {
         let id = await validatorUsers(req, res);
-        next();
+        con.query(
+            /*SQL*/ `SELECT u.id, u.nombre, u.correo, r.nombre as rol FROM usuario u JOIN rol r ON ${id} = r.id;`,
+            (err, data, fill) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 500,
+                        message: err
+                    });
+                }
+                if (data.length == 0) {
+                    return res.status(200).send({
+                        status: 200,
+                        message: 'Error encontrado, credenciales no validas revise su usuario y contraseña'
+                    });
+                } else {
+                    const dataU = data[0]
+                    req.body = dataU;
+                    next();
+                }
+            }
+        );
     } catch (error) {
         res.status(500).send({
             status: 500,
