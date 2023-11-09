@@ -19,7 +19,7 @@ crudsApp.get("/:Table", version({
 
 crudsApp.post("/:Table", version({
     "1.0.1": (req, res, next) => {
-        limitPColecciones(1, `${req.params.Table}`)(req, res, (err) => {
+        limitPColecciones(1500, `${req.params.Table}`)(req, res, (err) => {
             proxyTables(`${req.params.Table}`)(req, res, (err) => {
                 postUniversalv1(req, res, `${req.params.Table}`);
             });
@@ -29,7 +29,7 @@ crudsApp.post("/:Table", version({
 
 crudsApp.put("/:Table", version({
     "1.0.1": (req, res, next) => {
-        limitPColecciones(1, `${req.params.Table}`)(req, res, (err) => {
+        limitPColecciones(1500, `${req.params.Table}`)(req, res, (err) => {
             proxyTables(`${req.params.Table}`)(req, res, (err) => {
                 putUniversalv1(req, res, `${req.params.Table}`);
             });
