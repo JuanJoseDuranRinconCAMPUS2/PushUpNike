@@ -4,7 +4,7 @@ import con from "../db/connect.js";
 const validatorUsers = async(req, res) =>{
     return new Promise((resolve, reject) => {
         con.query(
-            /*SQL*/ `SELECT id FROM usuario WHERE nombre = ${req.nombre} AND contraseña = ${req.contraseña};`,
+            /*SQL*/ `SELECT id FROM usuario WHERE nombre = "${req.body.nombre}" AND contraseña = ${req.body.contraseña};`,
             (err, data, fill) => {
                 if (err) {
                     return res.status(500).send({
@@ -15,7 +15,7 @@ const validatorUsers = async(req, res) =>{
                 if (data.length == 0) {
                     return res.status(200).send({
                         status: 200,
-                        message: 'NO'
+                        message: 'Error encontrado, credenciales no validas revise su usuario y contraseña'
                     });
                 } else {
                     const idUser = data.id 
@@ -32,7 +32,7 @@ const proxyUsers = Router();
 
 proxyUsers.use(async(req, res, next)=>{
     try {
-        let names = await validatorUsers(req, res);
+        let id = await validatorUsers(req, res);
         next();
     } catch (error) {
         res.status(500).send({
