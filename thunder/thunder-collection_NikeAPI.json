@@ -1,0 +1,133 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "NikeAPI",
+    "dateExported": "2023-11-09T18:32:50.363Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b1d5e971-b4b4-4394-9b89-8a37fd89a30e",
+            "colId": "3c0f9a77-3161-4310-8168-4c39bc27caf5",
+            "containerId": "",
+            "name": "GET",
+            "url": "http://127.19.8.7:5199/Crud/producto",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-09T15:28:26.967Z",
+            "modified": "2023-11-09T16:54:08.254Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoibWFudWVsIiwiY29ycmVvIjoic2phZGFkYXNAZ21haWwuY29tIiwicm9sIjoidXN1YXJpbyIsImlhdCI6MTY5OTU0ODg0MSwiZXhwIjoxNjk5NTUyNDQxfQ.i8IgQMYqPccEbl74zV9f-NFUi0GX9PpYsO33IiadQc4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3301ea76-a580-43e7-b4d5-be34bdd2b82f",
+            "colId": "3c0f9a77-3161-4310-8168-4c39bc27caf5",
+            "containerId": "",
+            "name": "Especial",
+            "url": "http://127.19.8.7:5199/Especial/Producto/p.nombre = \"Nike Killshot 2 Leather\" AND p.precio = 1000000",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-11-09T16:55:13.210Z",
+            "modified": "2023-11-09T17:03:46.529Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tYnJlIjoibWFudWVsIiwiY29ycmVvIjoic2phZGFkYXNAZ21haWwuY29tIiwicm9sIjoidXN1YXJpbyIsImlhdCI6MTY5OTU0ODg0MSwiZXhwIjoxNjk5NTUyNDQxfQ.i8IgQMYqPccEbl74zV9f-NFUi0GX9PpYsO33IiadQc4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d3054c37-24af-48c3-9806-2e429329bbeb",
+            "colId": "3c0f9a77-3161-4310-8168-4c39bc27caf5",
+            "containerId": "",
+            "name": "POST",
+            "url": "http://127.19.8.7:5199/Crud/usuario",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-09T15:28:58.439Z",
+            "modified": "2023-11-09T15:29:03.111Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8df004ce-43fb-4b44-9207-7be1a8d21ea8",
+            "colId": "3c0f9a77-3161-4310-8168-4c39bc27caf5",
+            "containerId": "",
+            "name": "PUT",
+            "url": "http://127.19.8.7:5199/Crud/usuario",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-11-09T15:29:08.311Z",
+            "modified": "2023-11-09T15:29:12.362Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "48d3f985-0664-43f0-acc0-a769e162b1ec",
+            "colId": "3c0f9a77-3161-4310-8168-4c39bc27caf5",
+            "containerId": "",
+            "name": "DELETE",
+            "url": "http://127.19.8.7:5199/Crud/usuario?id=2",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-11-09T15:29:31.128Z",
+            "modified": "2023-11-09T15:29:39.132Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "1aa13139-f949-4547-967c-cfe6c9dbc6c8",
+            "colId": "3c0f9a77-3161-4310-8168-4c39bc27caf5",
+            "containerId": "",
+            "name": "SignIn",
+            "url": "http://127.19.8.7:5199/Login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-11-09T15:29:56.361Z",
+            "modified": "2023-11-09T15:31:03.479Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\" : \"manuel\",\n  \"contraseña\" : \"34554\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6eddd32e-4e9a-4627-81cd-167c1db03e2b",
+            "colId": "3c0f9a77-3161-4310-8168-4c39bc27caf5",
+            "containerId": "",
+            "name": "SignUp",
+            "url": "http://127.19.8.7:5199/SignUp",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-11-09T15:33:19.418Z",
+            "modified": "2023-11-09T15:35:48.699Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\" : \"manuel\",\n  \"documento\" : 213234,\n  \"correo\" : \"sjadadas@gmail.com\",\n  \"telefono\" : 123123213,\n  \"direccion\" : \"carrera 122 34234\",\n  \"codigo_Postal\" : \"CP-454\",\n  \"contraseña\" : \"34554\",\n  \"rolFK\" : 1,\n  \"tipoDocFK\" : 1,\n  \"generoFK\" : 1\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
