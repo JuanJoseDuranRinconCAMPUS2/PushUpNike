@@ -12,7 +12,10 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AdbIcon from '@mui/icons-material/Adb';
+
+import { grey } from '@mui/material/colors';
+
+const color = grey[500];
 
 const pages = ['Productos', 'Nosotros', 'Contactanos'];
 const settings = ['Ingresa', 'Registrate'];
@@ -37,11 +40,11 @@ function NavBarH() {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor: "#44474D"}}>
+    <AppBar position="static" sx={{backgroundColor: "#0D0D0D"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <IconButton sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}>
-            <Avatar alt="Remy Sharp" src="https://cdn-icons-png.flaticon.com/512/732/732084.png" />
+            <Avatar alt="Remy Sharp" src="https://sfcd.es/wp-content/uploads/2021/06/logo-nike.png" />
         </IconButton>
           <Typography
             variant="h6"
@@ -98,13 +101,12 @@ function NavBarH() {
             </Menu>
           </Box>
           <IconButton sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}>
-            <Avatar alt="Remy Sharp" src="https://cdn-icons-png.flaticon.com/512/732/732084.png" />
+            <Avatar alt="Remy Sharp" src="https://sfcd.es/wp-content/uploads/2021/06/logo-nike.png" />
         </IconButton>
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -133,7 +135,7 @@ function NavBarH() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <AccountCircleIcon />
+                <AccountCircleIcon sx={{color: grey[50], fontSize: 40 }}/>
               </IconButton>
             </Tooltip>
             <Menu
